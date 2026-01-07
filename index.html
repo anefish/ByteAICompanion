@@ -1,35 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-    <title>Byte AI Companion</title>
-    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-    <style>
-        body {
-            margin: 0;
-            overflow: hidden;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Byte AI Companion</title>
+  <style>
+    /* 重置 html 和 body，避免默认边距 */
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      /* 可选：隐藏滚动条 */
+    }
+
+    /* 全屏容器 */
+    .fullscreen {
+      width: 100vw;
+      height: 100vh;
+      background: #000;
+      /* 示例背景 */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 24px;
+    }
+  </style>
 </head>
 
 <body>
-    <a-scene embedded arjs="sourceType: webcam; trackingMethod: best; debugUIEnabled: false;"
-        vr-mode-ui="enabled: false" renderer="logarithmicDepthBuffer: true; antialias: true;">
-        <!-- 标记识别：使用标准 Hiro 标记 -->
-        <a-marker preset="hiro">
-            <a-box position="0 0.5 0" material="color: red;" scale="0.5 0.5 0.5" rotation="0 45 0">
-                <a-animation attribute="rotation" to="0 360 0" repeat="indefinite" dur="5000"></a-animation>
-            </a-box>
-            <a-text value="Hello Vite AR.js!" color="white" align="center" position="0 1 0" scale="1 1 1"></a-text>
-        </a-marker>
-
-        <!-- 相机 -->
-        <a-entity camera></a-entity>
-    </a-scene>
+  <div id="app"></div>
+  <script type="module" src="/src/main.ts"></script>
 </body>
 
 </html>
