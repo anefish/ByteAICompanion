@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	// import byte1 from '$lib/assets/byte1.jpg';
 
 	// let { children } = $props();
@@ -9,7 +10,9 @@
 		window.location.href = grokUrl;
 	}
 
-	openGrokWithText('Woof, let me talk to Byte.');
+	onMount(() => {
+		openGrokWithText('Woof, let me talk to Byte.');
+	});
 </script>
 
 <!-- <h1>Chat with Byte, the AI dog.</h1> -->
